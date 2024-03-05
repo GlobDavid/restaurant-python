@@ -2,10 +2,10 @@ from rest_framework import serializers
 from restaurant.models import Product
 
 # CREATE PRODUCT
-class productCreateSerializer( serializers.ModelSerializer ):
+class ProductCreateSerializer( serializers.ModelSerializer ):
     class Meta:
         model = Product
-        field = "__all__"
+        fields = ['id', 'fantasyName', 'category', 'description', 'price', 'available']
 
     def create( self, validate_data ):
         product = Product.objects.create(
@@ -17,3 +17,10 @@ class productCreateSerializer( serializers.ModelSerializer ):
         )
 
         return product
+    
+
+# LIST ALL PRODUCTS
+class ProductListAllSerializer( serializers.ModelSerializer ):
+    class Meta:
+        model = Product
+        fields = '__all__'
