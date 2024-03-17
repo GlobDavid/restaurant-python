@@ -80,7 +80,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'restaurantdb',
+        'NAME': 'restaurant',
         'USER': 'restaurantadmin',
         'PASSWORD': '123456789',
         'HOST': 'localhost',

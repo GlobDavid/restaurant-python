@@ -1,0 +1,10 @@
+from enum import Enum
+
+class CategoryEnum(Enum):
+    HAMBURGERS_AND_HOTDOGS = "HAMBURGERS_AND_HOTDOGS"
+    CHICKEN = "CHICKEN"
+    FISH = "FISH"
+    MEATS = "MEATS"
+    DESSERTS = "DESSERTS"
+    VEGAN_FOOD = "VEGAN_FOOD"
+    KIDS_MEALS = "KIDS_MEALS"

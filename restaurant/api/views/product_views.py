@@ -1,7 +1,6 @@
 from rest_framework import generics, mixins, views, status
 from restaurant.models import Product
 from restaurant.api.serializers import ProductCreateSerializer, ProductListAllSerializer
-
 class ProductListCreateAPIView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
     queryset = Product.objects.all()
 
