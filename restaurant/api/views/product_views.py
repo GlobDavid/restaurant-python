@@ -1,4 +1,4 @@
-from rest_framework import generics, mixins, views, status
+from rest_framework import generics, mixins
 from restaurant.models import Product
 from restaurant.api.serializers import ProductCreateSerializer, ProductListAllSerializer
 class ProductListCreateAPIView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
