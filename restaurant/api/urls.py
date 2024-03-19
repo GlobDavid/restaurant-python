@@ -1,11 +1,12 @@
 from django.urls import path, include
-from rest_framework import routers
-from .views.product_views import ProductListCreateAPIView
+from rest_framework.routers import DefaultRouter
+# from .views.product_views import ProductListCreateAPIView
+from .views.menu_views import MenuListCreateAPIView
 
-"""
-router = routers.DefaultRouter()
-router.register(r'products', ProductListCreateAPIView)
-"""
+router = DefaultRouter()
+# router.register(r'products', ProductListCreateAPIView)
+router.register(r'menus', MenuListCreateAPIView, basename='menu')
+
 urlpatterns = [
-    # path('v1/', include(router.urls)),
+    path('v1/', include(router.urls)),
 ]
