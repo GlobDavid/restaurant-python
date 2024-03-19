@@ -1,8 +1,8 @@
 from rest_framework import generics, mixins
-from restaurant.models import Product
+from restaurant.models import Products
 from restaurant.api.serializers import ProductCreateSerializer, ProductListAllSerializer
 class ProductListCreateAPIView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
-    queryset = Product.objects.all()
+    queryset = Products.objects.all()
 
     def get_serializer_class(self):
         if self.request.method == 'POST':

@@ -1,18 +1,18 @@
 import uuid
 from rest_framework import serializers
-from restaurant.models import Product
+from restaurant.models import Products
 from restaurant.enums import CategoryEnum
 
 # CREATE PRODUCT
 class ProductCreateSerializer( serializers.ModelSerializer ):
     category = serializers.ChoiceField(choices=[(choice.value, choice.value) for choice in CategoryEnum])
     class Meta:
-        model = Product
+        model = Products
         fields = ['uuid', 'fantasyName', 'category', 'description', 'price', 'available']
 
     def create(self, validated_data):
         validated_data['uuid'] = uuid.uuid4().bytes
-        product = Product.objects.create(**validated_data)
+        product = Products.objects.create(**validated_data)
         return product
     
 
@@ -22,7 +22,7 @@ class ProductListAllSerializer( serializers.ModelSerializer ):
     uuid = serializers.SerializerMethodField()
 
     class Meta:
-        model = Product
+        model = Products
         fields = '__all__'
 
     def get_uuid(self, obj):
