@@ -6,7 +6,7 @@ from .views import MenuListCreateAPIView, DishesListCreateAPIView
 router = DefaultRouter()
 # router.register(r'products', ProductListCreateAPIView)
 router.register(r'menus', MenuListCreateAPIView, basename='menu')
-router.register(r'dishes', DishesListCreateAPIView, basename='menu')
+router.register(r'dishes', DishesListCreateAPIView, basename='dish')
 
 urlpatterns = [
     path('v1/', include(router.urls)),
