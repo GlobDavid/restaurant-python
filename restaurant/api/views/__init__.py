@@ -1,1 +1,3 @@
 from .product_views import ProductListCreateAPIView
+from .menu_views import MenuListCreateAPIView
+from .dishes_views import DishesListCreateAPIView
