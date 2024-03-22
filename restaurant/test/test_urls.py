@@ -6,7 +6,10 @@ class TestUrls(SimpleTestCase):
     
     def test_menu_list_url_resolves(self):
         url = reverse('menu-list')
+        print(url)
         resolved = resolve(url)
+        print(resolved)
+        print(resolved.func.cls)
         self.assertEqual(resolved.func.cls, MenuListCreateAPIView)
         
         
