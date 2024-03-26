@@ -1,6 +1,11 @@
 from rest_framework import generics, viewsets
 from restaurant.models import Menu
 from restaurant.api.serializers import MenuCreateSerializer, MenusGetAllSerializer, MenuGetByUUIDSerializer
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
+
+
+@swagger_auto_schema(manual_parameters=[openapi.Parameter('id', openapi.IN_QUERY, description='UUID parameter', type=openapi.TYPE_STRING)])      
 class MenuListCreateAPIView(generics.ListCreateAPIView, viewsets.ViewSet):
     queryset = Menu.objects.all()
 
