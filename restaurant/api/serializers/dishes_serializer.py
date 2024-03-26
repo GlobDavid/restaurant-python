@@ -33,3 +33,16 @@ class DishesGetAllSerializer(serializers.ModelSerializer):
         I have no blocks, just working on Django but my mentor helps me   
         
         """
+        
+
+class DishesGetByUUIDSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Dishes
+        fields = '__all__'
+
+    def get_dish_by_uuid(self, uuid):
+        try:
+            dish = Dishes.objects.get(id_dish=uuid)
+            return dish
+        except Dishes.DoesNotExist:
+            raise serializers.ValidationError('Dish not found')
